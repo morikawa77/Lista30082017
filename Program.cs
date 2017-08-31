@@ -8,8 +8,8 @@ namespace Lista30082017
         {
             //Exercicio01();
             //Exercicio02();
-            Exercicio03();
-            //Exercicio04();
+            //Exercicio03();
+            Exercicio04();
             //Exercicio05();
             //Exercicio06();
             //Exercicio07();
@@ -95,25 +95,73 @@ namespace Lista30082017
         static void Exercicio03()
         {
             int[] VET = new int[50];
-            int ponteiro, nrepetido;
+            int nrepetido, y = 0;
+            int[] ponteiro = new int[50];
 
-            for (int i = 0; i < 50; i++)
+            int i = 0;
+
+            for (i = 0; i < 50; i++)
             {
                 Console.WriteLine("Informe o valor nº:{0} do Array VET: ", (i + 1));
                 VET[i] = Convert.ToInt32(Console.ReadLine());
             }
-            ponteiro = VET[0];
+            ponteiro[0] = i;
+            nrepetido = VET[0];
 
-            for (int i = 1; i < 50; i++) {
-                if (VET[i] == ponteiro){
-                    nrepetido = ponteiro;
-                    Console.WriteLine("O número {0} foi repetido nas posições: ", nrepetido);
-                    Console.WriteLine(i);
-                } else {
-                    ponteiro = VET[i+1]
+			for (int x = 0; x <= 50; x++)
+			{
+				for (int j = x + 1; j < 50; j++)
+				{
+					if (VET[j] == VET[x])
+					{
+                        nrepetido = VET[x];
+                        ponteiro[0] = i;
+                        if (VET[y] != VET[j]){
+                            ponteiro[y] = j;
+                            y++;
+						}
+
+					}
+				}
+
+                Console.Write("O número {0} é repetido nas posições ", nrepetido);
+                for (int z = 0; z < ponteiro.Length; z++){
+                    Console.Write("{0}, ", ponteiro[z]);
                 }
+                Console.WriteLine("\b\b");
+			} //Loop problematico - NOT OK
+
+        }
+
+        static void Exercicio04()
+        {
+            int[] v = new int[8];
+            v[0] = 5;
+            v[1] = 1;
+            v[2] = 4;
+            v[3] = 2;
+            v[4] = 7;
+            v[5] = 8;
+            v[6] = 3;
+            v[7] = 6;
+
+
+			/* for (int i = 8; i >= 5; i++)
+			{
+				var aux = v[i];
+				v[i] = v[7 - i + 1];
+				v[7 - i + 1] = aux;
+			} */ //NAO FAZ SENTIDO
+            
+
+            Console.Write("Conteúdo do Array v[");
+
+            for (int i = 0; i < 8; i++)
+            {
+                Console.Write("{0}, ", v[i]);
             }
 
+            Console.WriteLine("\b\b]");
         }
     }
 }
