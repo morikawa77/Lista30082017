@@ -9,8 +9,8 @@ namespace Lista30082017
             //Exercicio01();
             //Exercicio02();
             //Exercicio03();
-            Exercicio04();
-            //Exercicio05();
+            //Exercicio04();
+            Exercicio05();
             //Exercicio06();
             //Exercicio07();
             //Exercicio08();
@@ -133,7 +133,12 @@ namespace Lista30082017
 
         }
 
-        static void Exercicio04()
+        static void Exercicio04() {
+            
+        }
+
+
+        static void Exercicio05()
         {
             int[] v = new int[8];
             v[0] = 5;
@@ -146,15 +151,24 @@ namespace Lista30082017
             v[7] = 6;
 
 
-			/* for (int i = 8; i >= 5; i++)
-			{
-				var aux = v[i];
-				v[i] = v[7 - i + 1];
-				v[7 - i + 1] = aux;
-			} */ //NAO FAZ SENTIDO
-            
+			/*  for (int i = 8; i >= 5; i++)
+             {
+                 var aux = v[i];
+                 v[i] = v[7 - i + 1];
+                 v[7 - i + 1] = aux;
+             }  NAO FAZ SENTIDO NENHUM */
 
-            Console.Write("Conteúdo do Array v[");
+			//se for pra inverter o array:
+
+			for (int i = 7; i < 5; i--)
+			{
+				int aux = v[i];
+                v[i] = v[7 - i];
+				v[7 - i] = aux;
+			} // Tb não funciona HAHAHA
+
+
+			Console.Write("Conteúdo do Array v[");
 
             for (int i = 0; i < 8; i++)
             {
@@ -163,5 +177,58 @@ namespace Lista30082017
 
             Console.WriteLine("\b\b]");
         }
+
+        static void Exercicio06(){
+            int[] Q = new int[20];
+            int maior = 0, menor = 0, pmenor = 0, pmaior = 0;
+
+            Console.WriteLine("Insira 20 números posivos: ");
+
+            do
+            {
+                Console.WriteLine("Informe o valor nº:1 do Array Q: ");
+                Q[0] = Convert.ToInt32(Console.ReadLine());
+            } while (Q[0] < 0);
+
+
+				
+
+            maior = menor = Q[0];
+
+			for (int i = 1; i < 20; i++)
+			{
+                do {
+					Console.WriteLine("Informe o valor nº:{0} do Array Q: ", (i + 1));
+
+                    Q[i] = Convert.ToInt32(Console.ReadLine());
+                } while (Q[i] < 0);
+
+
+
+                if (Q[i] < menor){
+                    menor = Q[i];
+                    pmenor = i;
+                }
+
+				if (Q[i] > maior)
+				{
+                    maior = Q[i];
+					pmaior = i;
+				}
+
+			}
+
+            Console.WriteLine("O maior número na Array Q é: {0}", maior);
+            Console.WriteLine("A posição do maior número na Array Q é: {0}", pmaior);
+            Console.WriteLine("O menor número na Array Q é: {0}", menor);
+            Console.WriteLine("A posição do menor número na Array Q é: {0}", pmenor);
+        }
+
+
+        //static void Exercicio07 {
+            
+        //}
+
+
     }
 }
