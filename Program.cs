@@ -10,12 +10,12 @@ namespace Lista30082017
             //Exercicio02();
             //Exercicio03();
             //Exercicio04();
-            Exercicio05();
+            //Exercicio05();
             //Exercicio06();
             //Exercicio07();
             //Exercicio08();
             //Exercicio09();
-            //Exercicio10();
+            Exercicio10();
         }
 
         static void Exercicio01()
@@ -82,7 +82,7 @@ namespace Lista30082017
                     Console.WriteLine("Os Arrays V1 e V2 não possuem nenhum número igual");
                     break;
                 case 1:
-                    Console.WriteLine("Os Arrays V1 e V2 os mesmos números 1 vez");
+                    Console.WriteLine("Os Arrays V1 e V2 possuem os mesmos números 1 vez");
                     break;
                 default:
                     Console.WriteLine("Os Arrays V1 e V2 possuem os mesmos números {0} vezes", qtd);
